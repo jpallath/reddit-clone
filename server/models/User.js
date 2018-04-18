@@ -14,7 +14,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: [8, "Password is too short, must be 8 characters or more"]
-  }
+  },
+  createdAt: { type: Date, default: Date.now },
+  isDeleted: { type: Boolean, default: false }
 });
 
 // write some encryption for the password
